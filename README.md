@@ -17,3 +17,6 @@ To startup this project on your local machine do the following:
 2. create a .env file using sample.env as a guide with the equivalent values.
 > for this project, I used https://www.rijksmuseum.nl/api for VITE_APP_API_BASE_URL and 2esrTh6M for VITE_APP_API_KEY
 3. run `yarn dev` to start up the project.
+
+
+## NOTE: This project is a quick assessment I did for Pixidia

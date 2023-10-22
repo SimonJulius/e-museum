@@ -1,0 +1,70 @@
+@use '../sass-customs';
+
+.app-navbar {
+    display: flex;
+    align-items: center;
+    border: 1px solid sass-customs.$purple-100;
+    background: rgba(31, 31, 31, 0.40);
+    box-shadow: 0px 40px 40px 0px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur(12px);
+    border-radius: 5.3rem;
+    padding: 3.2rem;
+
+    @include sass-customs.mq-break-point(1440px) {
+        $padding: (
+            144rem: 3.2rem,
+            76.5rem: 2.6rem,
+        );
+    @include sass-customs.fluid-size-mixin('padding', $padding);
+}
+
+&__logo {
+    display: flex;
+    flex-basis: 30%;
+    align-items: center;
+    gap: 1.6rem;
+    font-size: 2.4rem;
+
+
+
+    @include sass-customs.mq-break-point(1440px) {
+        $font-size: (
+            144rem: 2.4rem,
+            36.5rem: 1.6rem,
+        );
+    @include sass-customs.fluid-size-mixin('font-size', $font-size);
+}
+
+@include sass-customs.mq-break-point(500px) {
+    flex-basis: 40%;
+}
+
+
+svg {
+    $width: (
+        144rem: 5.3rem,
+        36.5rem: 2.6rem,
+    );
+@include sass-customs.fluid-size-mixin('width', $width);
+min-width: 3.2rem;
+}
+}
+
+&__search {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    flex-basis: 35%;
+    gap: 1.6rem;
+    justify-content: flex-end;
+    min-width: fit-content;
+
+    @include sass-customs.mq-break-point(500px) {
+        min-width: 50%;
+    }
+
+    &-button {
+        height: 3.6rem;
+    }
+}
+}

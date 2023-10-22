@@ -1,0 +1,148 @@
+@use '../sass-customs';
+
+.app-gallery {
+    background: inherit;
+
+    &__header {
+        margin-bottom: sass-customs.$xl;
+        font-size: sass-customs.$xxl;
+        line-height: 6.8rem;
+        margin-top: 2rem;
+
+        @include sass-customs.mq-break-point(1440px) {
+            $font-size: (
+                144rem: sass-customs.$xxl,
+                36.5rem: sass-customs.$xl,
+            );
+        @include sass-customs.fluid-size-mixin('font-size', $font-size);
+    }
+
+
+}
+
+&__main {
+    display: grid;
+    $map: (
+        144rem: 45rem,
+        80rem: 30rem,
+    );
+grid-template-columns: repeat(auto-fill, minmax(clamp(20rem, calc(33.33%), 35rem), 1fr));
+gap: 2.9rem;
+max-width: 100%;
+margin: 0 auto;
+}
+
+&__image-frame {
+    position: relative;
+    height: fit-content;
+
+    &>img {
+        width: 100%;
+        aspect-ratio: 1.24;
+        object-fit: cover;
+        object-position: 50% 0%;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 34.32%, rgba(0, 0, 0, 0.72) 72.5%);
+    }
+
+    &--cta {
+        position: absolute;
+        width: 100%;
+        height: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.72);
+        display: grid;
+        place-items: center;
+        transition: all 0.5s ease-in;
+        z-index: 3;
+
+        &-btn {
+            display: none;
+        }
+    }
+
+    &:hover {
+        .app-gallery__image-frame--cta {
+            height: 100%;
+
+            &-btn {
+                display: block;
+            }
+        }
+
+    }
+}
+
+&__image-maker {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0.5% 2%;
+    border-bottom-left-radius: 0.8rem;
+    background: rgba(29, 29, 29, 0.50);
+    z-index: 2;
+}
+
+&__image-title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5%;
+    z-index: 2;
+
+    @include sass-customs.mq-break-point(1440px) {
+        $font-size: (
+            144rem: sass-customs.$xl,
+            36.5rem: sass-customs.$sm,
+        );
+    @include sass-customs.fluid-size-mixin('font-size', $font-size);
+
+    $line-height: (
+        144rem: sass-customs.$xl,
+        36.5rem: sass-customs.$lg,
+    );
+@include sass-customs.fluid-size-mixin('line-height', $line-height);
+
+}
+}
+
+&__navigation {
+    padding: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+
+    &__menu-item {
+        $width: (
+            144rem: 5.6rem,
+            36.7rem: 3.8rem,
+        );
+    @include sass-customs.fluid-size-mixin('width', $width);
+    aspect-ratio: 1;
+    border: 1px solid sass-customs.$secondary-carbon;
+    box-shadow: 0px 16px 16px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+
+    &.active {
+        border-color: sass-customs.$primary-razzmatazz;
+    }
+}
+
+@include sass-customs.mq-break-point(500px) {
+    justify-content: space-around;
+}
+}
+}

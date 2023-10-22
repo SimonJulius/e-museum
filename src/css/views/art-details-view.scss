@@ -1,0 +1,115 @@
+@use '../../css/sass-customs';
+
+.art-details-page {
+    background: linear-gradient(113deg, #23293E 0%, #1D1D1D 57.46%);
+    min-height: 100vh;
+    padding: 1.6rem;
+
+    figure {
+        border-radius: 0.8rem;
+        overflow: hidden;
+        position: relative;
+        height: 40vw;
+        transition: all 8s ease;
+
+        &:hover {
+            cursor: grab;
+            height: 100%;
+            transition: height 8s ease;
+        }
+
+        figcaption {
+            position: absolute;
+            left: 2%;
+            bottom: 5%;
+            font-size: sass-customs.$xxl;
+            line-height: 6.4rem;
+            z-index: 2;
+            color: sass-customs.$primary-white;
+            text-wrap: balance;
+
+            @include sass-customs.mq-break-point(1440px) {
+                $line-height: (
+                    144rem: 6.4rem,
+                    36.5rem: 4.5rem,
+                );
+
+            @include sass-customs.fluid-size-mixin('line-height', $line-height);
+            $font-size: (
+                144rem: sass-customs.$xxl,
+                36.5rem: sass-customs.$lg,
+            );
+        @include sass-customs.fluid-size-mixin('font-size', $font-size);
+
+    }
+}
+
+@include sass-customs.mq-break-point(767px) {
+    height: 60vh;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0%;
+}
+
+&::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.2);
+}
+}
+
+summary {
+    padding: 2rem 0;
+
+    section:not(:last-of-type) {
+        border-bottom: 1px solid sass-customs.$secondary-dust;
+        padding-bottom: 1rem;
+
+        div:nth-child(1) {
+            margin-bottom: 0.4rem;
+        }
+    }
+
+    section {
+        padding-top: 1rem;
+
+        div:nth-child(2) {
+            margin-bottom: 0.4rem;
+
+            @include sass-customs.mq-break-point(1440px) {
+                $line-height: (
+                    144rem: 4.5rem,
+                    36.5rem: 2.8rem,
+                );
+
+            @include sass-customs.fluid-size-mixin('line-height', $line-height);
+            $font-size: (
+                144rem: sass-customs.$lg,
+                36.5rem: sass-customs.$sm,
+            );
+        @include sass-customs.fluid-size-mixin('font-size', $font-size);
+    }
+
+}
+
+div:nth-child(1) {
+
+    @include sass-customs.mq-break-point(600px) {
+        font-size: sass-customs.$xsm;
+    }
+}
+}
+}
+
+&__go-back-button {
+    align-items: center;
+}
+}

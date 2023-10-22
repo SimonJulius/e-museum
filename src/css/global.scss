@@ -1,0 +1,319 @@
+@use './sass-customs';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+// app global css in SCSS form
+
+:root {
+    --font-family-semi: 'Graphik Semi Bold';
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    line-height: 2rem;
+}
+
+body {
+    font-weight: sass-customs.$normal;
+    color: sass-customs.$secondary-dust;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+// Typography classes
+
+.text-bold {
+    font-weight: sass-customs.$bold;
+}
+
+.text-medium {
+    font-weight: sass-customs.$medium;
+}
+
+.text-light {
+    font-weight: sass-customs.$light;
+}
+
+
+.text-size-xxsm {
+    font-size: sass-customs.$xxsm;
+    line-height: sass-customs.$lhxsm;
+}
+
+.text-size-xsm {
+    font-size: sass-customs.$xsm;
+    line-height: sass-customs.$lhsm;
+}
+
+.text-size-sm {
+    font-size: sass-customs.$sm;
+    line-height: sass-customs.$lhmd;
+}
+
+.text-size-md {
+    font-size: sass-customs.$md;
+    line-height: sass-customs.$lhmd;
+}
+
+.text-size-lg {
+    font-size: sass-customs.$lg;
+    line-height: sass-customs.$lhlg;
+}
+
+.text-size-xl {
+    font-size: sass-customs.$xl;
+    line-height: sass-customs.$lhxl;
+}
+
+.text-size-xxl {
+    font-size: sass-customs.$xxl;
+    line-height: sass-customs.$lhxxl;
+}
+
+// Color classes
+
+.text-teal {
+    color: sass-customs.$primary-teal;
+}
+
+.bg-teal {
+    background-color: sass-customs.$primary-teal;
+}
+
+.text-white {
+    color: sass-customs.$primary-white;
+}
+
+.bg-white {
+    background-color: sass-customs.$primary-white;
+}
+
+.text-eerie {
+    color: sass-customs.$primary-eerie
+}
+
+.bg-eerie {
+    background-color: sass-customs.$primary-eerie
+}
+
+.text-razzmatazz {
+    color: sass-customs.$primary-razzmatazz;
+}
+
+.bg-razzmatazz {
+    background-color: sass-customs.$primary-razzmatazz;
+}
+
+.text-dust-02 {
+    color: sass-customs.$secondary-dust;
+}
+
+.bg-dust-02 {
+    background-color: sass-customs.$secondary-dust;
+}
+
+.text-carbon-02 {
+    color: sass-customs.$secondary-carbon;
+}
+
+.bg-carbon-02 {
+    background-color: sass-customs.$secondary-carbon;
+}
+
+.text-nero-02 {
+    color: sass-customs.$secondary-nero;
+}
+
+.bg-nero-02 {
+    background-color: sass-customs.$secondary-nero;
+}
+
+.text-dark-01 {
+    color: sass-customs.$dark-100;
+}
+
+.bg-dark-01 {
+    background-color: sass-customs.$dark-100;
+}
+
+.text-dark-02 {
+    color: sass-customs.$dark-200;
+}
+
+.bg-dark-02 {
+    background-color: sass-customs.$dark-200;
+}
+
+.text-purple-01 {
+    color: sass-customs.$purple-100;
+}
+
+.bg-purple-01 {
+    background-color: sass-customs.$purple-100;
+}
+
+.text-gray-02-light {
+    color: sass-customs.$gray-02-light;
+}
+
+.bg-gray-02-light {
+    background-color: sass-customs.$gray-02-light;
+}
+
+// Text alignment
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/** SPACE */
+
+// Margin
+.mg-1 {
+    margin: sass-customs.$base-space;
+}
+
+.mg-2 {
+    margin: 2 * sass-customs.$base-space;
+}
+
+.mg-r-1 {
+    margin-right: sass-customs.$base-space;
+}
+
+.mg-r-2 {
+    margin-right: 2 * sass-customs.$base-space;
+}
+
+.mg-l-1 {
+    margin-left: sass-customs.$base-space;
+}
+
+.mg-l-2 {
+    margin-left: 2 * sass-customs.$base-space;
+}
+
+.mg-b-1 {
+    margin-bottom: sass-customs.$base-space;
+}
+
+.mg-b-1__6 {
+    margin-bottom: 1.6 * sass-customs.$base-space;
+}
+
+.mg-b-2 {
+    margin-bottom: 2 * sass-customs.$base-space;
+}
+
+.mg-t-2 {
+    margin-top: 2 * sass-customs.$base-space;
+}
+
+.mg-t-1 {
+    margin-top: sass-customs.$base-space;
+}
+
+// Padding
+
+.pd-1 {
+    padding: sass-customs.$base-space;
+}
+
+.pd-2 {
+    padding: 2 * sass-customs.$base-space;
+}
+
+.pd-r-1 {
+    padding-right: sass-customs.$base-space;
+}
+
+.pd-r-2 {
+    padding-right: 2 * sass-customs.$base-space;
+}
+
+.pd-l-1 {
+    padding-left: sass-customs.$base-space;
+}
+
+.pd-l-2 {
+    padding-left: 2 * sass-customs.$base-space;
+}
+
+.pd-x-1_6 {
+    padding: 0 1.6 * sass-customs.$base-space;
+}
+
+.pd-y-2 {
+    padding: 2 * sass-customs.$base-space 0;
+}
+
+// Display properties
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.inline {
+    display: inline;
+}
+
+.flex {
+    display: flex;
+}
+
+.grid {
+    display: grid;
+}
+
+// Flex properties
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+
+// Some global-button codes
+.btn-no-default {
+    outline: none;
+    border: none;
+    background: inherit;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+// Skeleton
+
+.vue-skeletor {
+    background-color: #ccc;
+
+    &:not(.vue-skeletor--shimmerless):after {
+        background: linear-gradient(90deg,
+                rgba(255, 255, 255, .7) 0%,
+                rgba(255, 255, 255, 1) 50%,
+                rgba(255, 255, 255, .7) 100%);
+    }
+}

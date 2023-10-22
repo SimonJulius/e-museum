@@ -1,0 +1,17 @@
+@use '../sass-customs';
+
+.base-button {
+    button {
+        border: none;
+        outline: none;
+        border-radius: 4rem;
+        font-size: sass-customs.$md;
+        width: 100%;
+        padding: .8rem 3.1rem;
+    }
+
+    .btn-primary {
+        color: sass-customs.$primary-white;
+        background-color: sass-customs.$primary-razzmatazz;
+    }
+}

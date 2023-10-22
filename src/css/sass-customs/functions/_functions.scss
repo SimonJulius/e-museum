@@ -1,0 +1,73 @@
+@use 'sass:math';
+
+@function map-sort($map) {
+    $keys: list-sort(map-keys($map));
+    $sortedMap: (
+    );
+
+@each $key in $keys {
+    $sortedMap: map-merge($sortedMap,
+            ($key: map-get($map, $key),
+            ));
+}
+
+@return $sortedMap;
+}
+
+@function list-sort($list) {
+    $sortedlist: (
+    );
+
+@while length($list)>0 {
+    $value: nth($list, 1);
+
+    @each $item in $list {
+        @if $item >$value {
+            $value: $item;
+        }
+    }
+
+    $sortedlist: append($sortedlist, $value, "space");
+    $list: list-remove($list, index($list, $value));
+}
+
+@return $sortedlist;
+}
+
+@function list-remove($list, $index) {
+    $newList: (
+    );
+
+@for $i from 1 through length($list) {
+    @if $i !=$index {
+        $newList: append($newList, nth($list, $i), "space");
+    }
+}
+
+@return $newList;
+}
+
+@function linear-regression($map) {
+    $map-length: length(map-keys($map));
+    $keys: map-keys($map);
+    $y1: map-get($map, nth($keys, 1));
+    $y2: map-get($map, nth($keys, 2));
+    $x1: nth($keys, 1);
+    $x2: nth($keys, 2);
+
+    @if ($map-length !=2) {
+        @error "Argument to this function must be equal to 2";
+    }
+
+    $slope: math.div($y2 - $y1, $x2 - $x1);
+    $y-intercept: $y1 - ($slope * $x1);
+
+    $sign: "+";
+
+    @if ($y-intercept < 0) {
+        $sign: "-";
+        $y-intercept: abs($y-intercept);
+    }
+
+    @return calc(#{$slope * 100}vw #{$sign} #{$y-intercept});
+}
